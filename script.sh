@@ -1,25 +1,27 @@
 ## Algorithme général ##
-q=0;
-while [ $q -ne 0 ]
+q=0
+while [ $q -eq 0 ]
 do
-	case $(affichage()) in
+	affichage
+	case $choix_affichage in
 		modification)
-			q_2=1;
-			while [ $q_2 -ne 0 ]
+			q_2=0
+			while [ $q_2 -eq 0 ]
 			do
-				case $(modif()) in
+				modif
+				case $choix_modif in
 					add)
-						ajout();
+						`ajout`
 					supp)
-						suppression();
+						`suppression`
 					quit)
-						q_2=0;
+						q_2=1
 				esac
 			done
-		affichage)
-			affichage();
+		afficher)
+			afficher
 		quit)
-			q=0;
+			q=1
 	esac
 done
 
