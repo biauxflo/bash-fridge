@@ -16,3 +16,8 @@ function ajouter {
         echo "$chaine" >> DATA.txt
 }
 ajouter
+
+Exemple Commande Supprimer 
+sed -i"back" '/<nom_produit>/d' DATA.txt
+la commande supprime la ligne contenant le nom du produit et cree un fichier contenant la version d'avant. Il reste d'injecter la commande dans une fonction.
+
