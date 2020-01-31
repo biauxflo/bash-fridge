@@ -182,6 +182,7 @@ sortie_boucle1=0
 while [ $sortie_boucle1 -eq 0 ]
 do
 	affichage
+	clear
 	case $choix_affichage in
 		'1')
 			sortie_boucle2=0
