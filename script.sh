@@ -38,37 +38,43 @@ ajout(){
 		'4')categorie="Poisson";;
 		'5')categorie="Plat Préparé";;
 		'6')categorie="Sauce";;
-		'7')categorie="Restes";;
+		'7')
+			categorie="Restes"
 			echo "Saisir les infos de votre produit :"
         		read -p "Nom" pdt
         		read -p "Quantite" qte
 			echo "$pdt/$qte/Restes/$(date +%Y%m%d -d '+3 days'" >> DATA.txt
-                	return 0  
+                	return 0;;
 		*) echo "Erreur. Veuillez taper un chiffre valable.";;
 	esac
         echo "Saisir les infos de votre produit (Nom/Quantite/Date -AAAAMMJJ-) :"
         read -p "Nom" pdt
 	read -p "Quantite" qte
 	read -p "Date" day
+	if [ $day -eq $(date +%Y%m%d) ] || [ $day -lt $(date +%Y%m%d) ]
+	then
+		echo "Attention votre produit est à consommer rapidement (date recommandée de consommation passée)"
+	fi
 	for i in seq 2 $(wc -l DATA.txt)
-	do  
+	do
 		if [ $pdt == $(head -n $i DATA.txt | tail -1 | cut -f 1 -d "/") ]
         	then
 			if [ $date == $(head -n $i DATA.txt | tail -1 | cut -f 4 -d "/") ]
 			then
 				echo "$pdt/$(($qte + head -n $i DATA.txt | tail -1 ))/$categorie/$day">> DATA.txt
 				sed "/$(head -n $i DATA.txt | tail -1)/d" DATA.txt
+				return 0
 			fi
 		fi
-		echo "$chaine""$pdt/$qte/$categorie/$day" >> DATA.txt
 	done
+	echo"$pdt/$qte/$categorie/$day" >> DATA.txt;
 }
 
 suppression(){
         echo "Saisir le nom du produit que vous voulez supprimer : "
         read -r nom
         sed -i"back" "/$nom/d" DATA.txt
-	rm -rf DATA.txt.back
+	rm -rf DATA.txt.back;
 }
 
 tri(){
