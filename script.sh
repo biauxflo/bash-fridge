@@ -121,10 +121,39 @@ ajout(){
 }
 
 suppression(){
-        echo "Saisir le nom du produit que vous voulez supprimer : "
-        read -r nom
-        sed -i"back" "/$nom/d" DATA.txt
-	rm -rf DATA.txt.back;
+        touch supp_temp
+        column -t -s '/' DATA.txt > supp_temp
+        cat -n supp_temp
+        read -p "Quel produit avez-vous consommer ?" num
+        echo "Que voulez vous faire :"
+        echo "1: Un ou plusieurs produits consommés"
+        echo "2: Tous les produits consommés"
+        read x
+        case $x in
+                '1')    read -p "Combien de produits avez-vous consommer ?" nb
+                        pdt_2="$(head -n $num DATA.txt | tail -1 | cut -f 1 -d '/')"
+                        qte_2="$(head -n $num DATA.txt | tail -1 | cut -f 2 -d '/')"
+                        ctg_2="$(head -n $num DATA.txt | tail -1 | cut -f 3 -d '/')"
+                        day_2="$(head -n $num DATA.txt | tail -1 | cut -f 4 -d '/')"
+                        if [ $nb -ge $qte_2 ]
+                        then
+                                sed -i"back" "`echo $num`d" DATA.txt
+                                rm DATA.txtback
+                                return 0
+                        else
+                                echo "$pdt_2/$(($qte_2 - $nb))/$ctg_2/$day_2" >> DATA.txt
+                                sed -i"back" "`echo $num`d" DATA.txt
+                                rm DATA.txtback
+                                return 0
+                        fi;;
+                '2')
+                        sed -i"back" "`echo $num`d" DATA.txt
+                        rm DATA.txtback
+                        return 0;;
+                *)
+                        echo "La saisie n'est pas valide";;
+        esac
+        rm supp_temp
 }
 
 tri(){
