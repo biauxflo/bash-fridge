@@ -1,11 +1,14 @@
 
-Nom/Quantite/Categorie/Date de peremption
+
+Nom/Quantité/Catégorie/Date de péremption
 fromage/1/Produits Laitiers/[0;31mATTENTION PRODUIT PERIME[0;m
 cuisse de poulet/3/Viande/[0;31mATTENTION PRODUIT PERIME[0;m
 mayonnaise lessieurs/6/Sauce/[0;31mATTENTION PRODUIT PERIME[0;m
+Jambon/5/Viande/[0;31mATTENTION PRODUIT PERIME[0;m
 fromage frais a la fraise/4/Produits Laitiers/J-1
 poulet haut de cuisse/3/Viande/J-2
 concentre de tomtaes/1/Sauce/J-3
+Lasagnes/2/Restes/J-3
 pate pizza/2/Plat Préparé/J-3
 sauce tomates cuisinee/1/Sauce/J-4
 jambon de dinde/1/Viande/J-5
@@ -25,9 +28,12 @@ mozzarella/1/Produits Laitiers/J-14
 jus d orange/1/Fruit/J-15
 crevettes/1/Poisson/J-16
 spaghetti carbonara surgele/1/Plat Préparé/J-16
+Yaourt nature/12/Produit laitier/J-16
 beurre/1/Produits Laitiers/J-18
 camembert/1/Produits Laitiers/J-27
 confiture fraise/1/Plat Préparé/J-44
 fromage a tartiner/1/Produits Laitiers/J-48
+Banane/6/Fruit/J-49
 lait demi ecreme/1/Produits Laitiers/J-91
+Beurre/1/Autre/J-230
 mayonnaise/1/Sauce/J-243

@@ -6,6 +6,22 @@ echo "3: Quitter"
 read choix_affichage
 }
 
+alerte(){
+c=3
+dateproduit=`head -n $c DATA.txt | tail -1 | cut -f 4 -d '/'`
+
+	while [ "$dateproduit" -lt `date +%Y%m%d` ]
+	do
+        	echo `head -n $c DATA.txt | tail -1 | cut -f 1 -d '/'` ":"
+     	  	echo "Attention le produit est périmé"
+      	 	echo " "
+       		c=$(($c + 1))
+	        dateproduit=`head -n $c DATA.txt | tail -1 | cut -f 4 -d '/'`
+
+	done
+}
+
+
 afficher(){
 clear
 echo "" > temp.txt
@@ -23,7 +39,7 @@ do
 done < DATA.txt
 column -t -s '/' temp.txt
 echo -e "\n"
-./alerte.sh
+alerte
 echo " "
 }
 
@@ -40,8 +56,8 @@ compteur(){
 rouge='\e[0;31m'
 neutre='\e[0;m'
 date_jour=`date +%Y%m%d`
-date_1=`date -d $1 +%s`
-date_2=`date -d $date_jour +%s`
+date_1=`date -d $1 "+%s"`
+date_2=`date -d $date_jour "+%s"`
 compt=`echo "( $date_1 - $date_2) / (24*3600)" | bc`
 if [ $compt -gt 0 ]
 then
