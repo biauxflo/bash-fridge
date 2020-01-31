@@ -1,4 +1,7 @@
 Nom/Quantite/Categorie/Date de peremption
+fromage/4/produits laitiers/20190708
+cuisse de poulet/3/viande/20200115
+mayonnaise lessieurs/6/sauce/20200119
 laitue/1/salades/20200206
 fromage frais a la fraise/4/produits laitiers/20200201
 creme fraiche/1/produits laitiers/20200206
