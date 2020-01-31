@@ -30,3 +30,11 @@ function supprimer {
 }
 
 supprimer
+
+CATEGORIES PRODUITS 
+'1')categorie="Fruit";;
+                '2')categorie="Légume";;
+                '3')categorie="Viande";;
+                '4')categorie="Poisson";;
+                '5')categorie="Plat Préparé";;
+                '6')categorie="Sauce";;
