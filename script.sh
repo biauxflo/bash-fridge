@@ -12,6 +12,7 @@ tri
 column -t 4 -s '/' DATA.txt
 echo -e "\n"
 ./alerte.sh
+echo " "
 }
 
 modif(){
