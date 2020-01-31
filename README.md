@@ -1,40 +1,15 @@
 README : Inventaire d'un frigo
 
-Format de la sauvegarde dans un fichier texte : 
-Nom | Quantité | Catégorie | Date de péremption (AAAAMMJJ)
-(1 item par ligne)
+Vous aussi vous en avez marre d'oublier votre bouffe dans un coin du frigo et de la retrouver périmée ?
+Alors adoptez "Fridgy" !
+Simple d'utilisation grâce à son interface moderne, il sera votre meilleur compagnon dans la cuisine !
+Il peut effectivement vous prevenir quand un produit est périmé, et vous indique le nombre de jours avant péremption !
 
-Exemple commande tri par date 
- sort -g -k <champ> -t '<separateur>' <fichier à trier> -o <fichier à trier>
-
-Exemple Fonction Ajouter
-#!/bin/bash
-
-function ajouter {
-        echo "Saisir les infos de votre produit (Nom/Date d'expiration/Type/quantite"
-        read -r chaine
-        echo "$chaine" >> DATA.txt
-}
-ajouter
-
-Exemple Commande Supprimer 
-sed -i"back" '/<nom_produit>/d' DATA.txt
-la commande supprime la ligne contenant le nom du produit et cree un fichier contenant la version d'avant. Il reste d'injecter la commande dans une fonction.
-
-#!/bin/bash
-
-function supprimer {
-        echo "Saisir le nom du produit que vous voulez supprimer : "
-        read -r nom
-        sed -i"back" "/$nom/d" DATA.txt
-}
-
-supprimer
-
-CATEGORIES PRODUITS 
-'1')categorie="Fruit";;
-                '2')categorie="Légume";;
-                '3')categorie="Viande";;
-                '4')categorie="Poisson";;
-                '5')categorie="Plat Préparé";;
-                '6')categorie="Sauce";;
+Comment l'utiliser ?
+- Modifier le contenu : Vous pouvez ajouter ou supprimer des produits dans votre frigo.
+    - Ajouter : Indiquez le nom, la quantité, la catégorie et la date de péremption. La catégorie sert à définir une date de consommation limite, différente de la date de péremption légale. 
+Si vous ajoutez un produit ayant les mêmes noms, catégories et date de péremption qu'un produit déjà présent dans le frigo, les deux s'additionneront.
+    - Supprimer : Sélectionner un produit et la quantité que vous avez enlevé du frigo
+- Afficher le contenu : Vous voyez ici le contenu exhaustif de votre frigo, classé par date de péremption (la plus courte est en haut). Si un produit est périmé, sa date de péremption 
+est remplacé par un message de prévention, et un message supplémentaire s'affiche en bas de la liste.
+- Chercher une recette : Vous pouvez ici chercher automatiquement une recette avec les ingrédients à utiliser le plus rapidement, sur le site Cuisine-libre.
