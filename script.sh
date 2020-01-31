@@ -1,4 +1,3 @@
-set -x
 affichage(){
 echo "Que voulez vous faire ?"
 echo "1: Modifier le contenu du frigo"
