@@ -1,29 +1,29 @@
-Nom/Quantité/Catégorie/Date de péremption
+Nom/Quantite/Categorie/Date de peremption
 laitue/1/salades/20200206
-fromage_frais a la fraise/4/produits laitiers/20200201
-creme_fraiche/1/produits_laitiers/20200206
-poulet_haut_de_cuisse/3/viande/20200202
-fromage_a_tartiner/1/produits_laitiers/20200319
+fromage frais a la fraise/4/produits laitiers/20200201
+creme fraiche/1/produits laitiers/20200206
+poulet haut de cuisse/3/viande/20200202
+fromage a tartiner/1/produits laitiers/20200319
 mayonnaise/1/sauce/20201001
-concentre_de_tomtaes/1/sauce/20200203
-mozzarella/1/produits_laitiers/20200214
-lait_demi_ecreme/1/produits_laitiers/20200502
+concentre de tomtaes/1/sauce/20200203
+mozzarella/1/produits laitiers/20200214
+lait demi ecreme/1/produits laitiers/20200502
 banane/6/Friuts/20200206
 carotte/5/legumes/20200210
 olives/2/fruits/20200208
-beurre/1/produits_laitiers/20200218
+beurre/1/produits laitiers/20200218
 poivre/3/legumes/20200210
-jambon_de_dinde/1/viande/20200205
-pate_pizza/2/plats_prepares/20200203
+jambon de dinde/1/viande/20200205
+pate pizza/2/plats prepares/20200203
 oeufs/12/oeufs/20200209
-sauce_tomates_cuisinee/1//20200204
-pomme_de_terre/1/legumes/20200212
+sauce tomates cuisinee/1//20200204
+pomme de terre/1/legumes/20200212
 crevettes/1/poisson/20200216
-camembert/1/produits_laitiers/20200227
-jus_d_orange/1/boissons/20200215
-confiture_fraise/1/produits_sucres/20200315
-tortilla/1/plats_prepares/20200205
+camembert/1/produits laitiers/20200227
+jus d orange/1/boissons/20200215
+confiture fraise/1/produits sucres/20200315
+tortilla/1/plats prepares/20200205
 surimi/1/poisson/20200213
 elpinard/1/salades/20200210
 cerises/1/Friuts/20200211
-spaghetti_carbonara_surgele/1/plats_prepares/20200216
+spaghetti carbonara surgele/1/plats prepares/20200216
