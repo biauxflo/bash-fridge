@@ -1,14 +1,8 @@
-Jambon/5/Viande/20200131
-Yaourt nature/12/Produit laitier/20200216
-Beurre/1/Autre/20200918
-Lasagnes/2/Restes/20200203
-Banane/6/Fruit/20200320
-fromage/1/Produits Laitiers/20190708
-cuisse de poulet/3/Viande/20200115
-mayonnaise lessieurs/6/Sauce/20200119
+Jambon/2/Viande/20200131
 fromage frais a la fraise/4/Produits Laitiers/20200201
 poulet haut de cuisse/3/Viande/20200202
 concentre de tomtaes/1/Sauce/20200203
+Lasagnes/2/Restes/20200203
 pate pizza/2/Plat Préparé/20200203
 sauce tomates cuisinee/1/Sauce/20200204
 jambon de dinde/1/Viande/20200205
@@ -28,10 +22,13 @@ mozzarella/1/Produits Laitiers/20200214
 jus d orange/1/Fruit/20200215
 crevettes/1/Poisson/20200216
 spaghetti carbonara surgele/1/Plat Préparé/20200216
+Yaourt nature/12/Produit laitier/20200216
 beurre/1/Produits Laitiers/20200218
 camembert/1/Produits Laitiers/20200227
 confiture fraise/1/Plat Préparé/20200315
 fromage a tartiner/1/Produits Laitiers/20200319
 lait demi ecreme/1/Produits Laitiers/20200502
+Beurre/1/Autre/20200918
 mayonnaise/1/Sauce/20201001
-
+Moutarde de Dijon/1/Sauce/20210320
+Banane/9/Fruit/20200320

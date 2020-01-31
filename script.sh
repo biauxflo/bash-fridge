@@ -79,6 +79,7 @@ ajout(){
 	echo "7: Produits Laitiers"
 	echo "8: Restes"
 	read c
+	qte="p"
 	case $c in 
 		'1')categorie="Fruit";;
                 '2')categorie="Légume";;
@@ -91,10 +92,7 @@ ajout(){
 			categorie="Restes"
 			echo "Saisir les infos de votre produit :"
         		read -p "Nom " pdt
-        		while [ $qte != [0-9] ]
-        		do
-        		    read -p "Quantite " qte
-			    done
+			read -p "Quelle est la quantite ? " qte
 			echo "$pdt/$qte/Restes/$(date +%Y%m%d -d '+3 days')" >> DATA.txt
                 	return 0;;
 		*) echo "Erreur. Veuillez taper un chiffre valable."
@@ -102,10 +100,7 @@ ajout(){
 	esac
         echo "Saisir les infos de votre produit (Nom/Quantite/Date -AAAAMMJJ-) :"
         read -p "Nom " pdt
-	while [ $qte != [0-9] ]
-	do
-	read -p "Quelle est la quantite ?" qte
-	done
+	read -p "Quantité" qte
 	read -p "Date " day
 	if [ $day -eq $(date +%Y%m%d) ] || [ $day -lt $(date +%Y%m%d) ]
 	then

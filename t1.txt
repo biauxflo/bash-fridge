@@ -1,3 +1,3 @@
-Jambon/5/Viande/20200131
-Yaourt nature/12/Produit laitier/20200216
-Beurre/1/Autre/20200918
+Jambon/2/Viande/20200131
+fromage frais a la fraise/4/Produits Laitiers/20200201
+poulet haut de cuisse/3/Viande/20200202

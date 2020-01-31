@@ -1,10 +1,6 @@
 
-
 Nom/Quantité/Catégorie/Date de péremption
-fromage/1/Produits Laitiers/[0;31mATTENTION PRODUIT PERIME[0;m
-cuisse de poulet/3/Viande/[0;31mATTENTION PRODUIT PERIME[0;m
-mayonnaise lessieurs/6/Sauce/[0;31mATTENTION PRODUIT PERIME[0;m
-Jambon/5/Viande/[0;31mATTENTION PRODUIT PERIME[0;m
+Jambon/2/Viande/[0;31mATTENTION PRODUIT PERIME[0;m
 fromage frais a la fraise/4/Produits Laitiers/J-1
 poulet haut de cuisse/3/Viande/J-2
 concentre de tomtaes/1/Sauce/J-3
@@ -37,3 +33,4 @@ Banane/6/Fruit/J-49
 lait demi ecreme/1/Produits Laitiers/J-91
 Beurre/1/Autre/J-230
 mayonnaise/1/Sauce/J-243
+Moutarde de Dijon/1/Sauce/J-414
