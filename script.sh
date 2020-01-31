@@ -9,9 +9,23 @@ read choix_affichage
 
 afficher(){
 clear
+echo "" > temp.txt
 tri
-column -t 4 -s '/' DATA.txt
+while read line
+do
+	if [ "$line" != "Nom/Quantité/Catégorie/Date de péremption" ]
+	then
+		date_dep=`echo $line | cut -f 4 -d '/'`
+		date_arr=`compteur $date_dep`
+		echo "$line" | sed "s#[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]#$date_arr#g" >> temp.txt
+	else 
+		echo "$line" >> temp.txt
+	fi
+done < DATA.txt
+column -t -s '/' temp.txt
 echo -e "\n"
+./alerte.sh
+echo " "
 }
 
 modif(){
@@ -20,6 +34,22 @@ echo "1: Ajouter un produit"
 echo "2: Suppression"
 echo "3: Revenir au menu"
 read choix_modif
+}
+
+compteur(){
+## argument 1 : date de péremption
+rouge='\e[0;31m'
+neutre='\e[0;m'
+date_jour=`date +%Y%m%d`
+date_1=`date -d $1 +%s`
+date_2=`date -d $date_jour +%s`
+compt=`echo "( $date_1 - $date_2) / (24*3600)" | bc`
+if [ $compt -gt 0 ]
+then
+	echo "J-$compt"
+else
+	echo -e "${rouge}ATTENTION PRODUIT PERIME${neutre}"
+fi
 }
 
 ajout(){
@@ -83,7 +113,10 @@ suppression(){
 }
 
 tri(){
-echo "truc"
+touch temp
+tail -n +1 DATA.txt > temp
+sort -g -k 4 -t '/' temp -o DATA.txt
+rm temp
 }
 
 ## Algorithme général ##
