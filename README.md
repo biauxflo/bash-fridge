@@ -6,6 +6,8 @@ Simple d'utilisation grâce à son interface moderne, il sera votre meilleur com
 Il peut effectivement vous prevenir quand un produit est périmé, et vous indique le nombre de jours avant péremption !
 
 Comment l'utiliser ?
+Executer le fichier "script.sh" et appréciez nos nombreuses fonctionnalités
+
 - Modifier le contenu : Vous pouvez ajouter ou supprimer des produits dans votre frigo.
     - Ajouter : Indiquez le nom, la quantité, la catégorie et la date de péremption. La catégorie sert à définir une date de consommation limite, différente de la date de péremption légale. 
 Si vous ajoutez un produit ayant les mêmes noms, catégories et date de péremption qu'un produit déjà présent dans le frigo, les deux s'additionneront.
