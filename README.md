@@ -21,3 +21,12 @@ Exemple Commande Supprimer
 sed -i"back" '/<nom_produit>/d' DATA.txt
 la commande supprime la ligne contenant le nom du produit et cree un fichier contenant la version d'avant. Il reste d'injecter la commande dans une fonction.
 
+#!/bin/bash
+
+function supprimer {
+        echo "Saisir le nom du produit que vous voulez supprimer : "
+        read -r nom
+        sed -i"back" "/$nom/d" DATA.txt
+}
+
+supprimer
