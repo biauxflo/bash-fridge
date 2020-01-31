@@ -2,7 +2,8 @@ affichage(){
 echo "Que voulez vous faire ?"
 echo "1: Modifier le contenu du frigo"
 echo "2: Consulter le contenu du frigo"
-echo "3: Quitter"
+echo "3: Chercher une recette"
+echo "4: Quitter"
 read choix_affichage
 }
 
@@ -156,6 +157,18 @@ suppression(){
         rm supp_temp
 }
 
+chercher_recette() {
+        tail -n +2 DATA.txt > t.txt
+        head -n3 t.txt > t1.txt
+        cut -d/ -f1 t1.txt > t2.txt
+        tr ' ' '+' < t2.txt > t3.txt
+        tr '\n' '+' < t3.txt > t4.txt
+        lien=$(echo "https://cuisine-libre.fr/?page=recherche&recherche=")
+        t5=`cat t4.txt`
+        URL=$(echo $lien$t5)
+        firefox $URL&
+}
+
 tri(){
 touch temp
 tail -n +1 DATA.txt > temp
@@ -195,6 +208,9 @@ do
 			afficher
 			;;
 		'3')
+			chercher_recette
+			;;
+		'4')
 			sortie_boucle1=1
 			;;
 		*)
