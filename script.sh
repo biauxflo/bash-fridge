@@ -1,4 +1,3 @@
-
 affichage(){
 echo "Que voulez vous faire ?"
 echo "1: Modifier le contenu du frigo"
@@ -7,9 +6,11 @@ echo "3: Quitter"
 read choix_affichage
 }
 
-
 afficher(){
-echo "truc"
+clear
+tri
+column -t 4 -s '/' DATA.txt
+echo -e "\n"
 }
 
 modif(){
@@ -28,6 +29,9 @@ suppression(){
 echo "machin"
 }
 
+tri(){
+echo "truc"
+}
 
 ## Algorithme général ##
 sortie_boucle1=0
@@ -50,6 +54,9 @@ do
 					'3')
 						sortie_boucle2=1
 						;;
+					*)
+						echo "Erreur. Veuillez taper un chiffre valable."
+						;;
 				esac
 			done
 			;;
@@ -59,6 +66,8 @@ do
 		'3')
 			sortie_boucle1=1
 			;;
+		*)
+			echo "Erreur. Veuillez taper un chiffre valable."
+			;;
 	esac
 done
-
