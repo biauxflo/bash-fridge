@@ -1,27 +1,64 @@
+
+affichage(){
+echo "Que voulez vous faire ?"
+echo "1: Modifier le contenu du frigo"
+echo "2: Consulter le contenu du frigo"
+echo "3: Quitter"
+read choix_affichage
+}
+
+
+afficher(){
+echo "truc"
+}
+
+modif(){
+echo "Que voulez vous faire ?"
+echo "1: Ajouter un produit"
+echo "2: Suppression"
+echo "3: Revenir au menu"
+read choix_modif
+}
+
+ajout(){
+echo "bidule"
+}
+
+suppression(){
+echo "machin"
+}
+
+
 ## Algorithme général ##
-q=0
-while [ $q -eq 0 ]
+sortie_boucle1=0
+while [ $sortie_boucle1 -eq 0 ]
 do
 	affichage
 	case $choix_affichage in
-		modification)
-			q_2=0
-			while [ $q_2 -eq 0 ]
+		'1')
+			sortie_boucle2=0
+			while [ $sortie_boucle2 -eq 0 ]
 			do
 				modif
 				case $choix_modif in
-					add)
-						`ajout`
-					supp)
-						`suppression`
-					quit)
-						q_2=1
+					'1')
+						ajout
+						;;
+					'2')
+						suppression
+						;;
+					'3')
+						sortie_boucle2=1
+						;;
 				esac
 			done
-		afficher)
+			;;
+		'2')
 			afficher
-		quit)
-			q=1
+			;;
+		'3')
+			sortie_boucle1=1
+			;;
 	esac
 done
 
