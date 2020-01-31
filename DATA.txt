@@ -1,4 +1,32 @@
-Nom/Quantité/Catégorie/Date de péremption
-Jambon/5/Viande/20200131
-Yaourt nature/12/Produit laitier/20200216
-Beurre/1/Autre/20200918
+Nom/Quantite/Categorie/Date de peremption
+fromage/1/Produits Laitiers/20190708
+cuisse de poulet/3/Viande/20200115
+mayonnaise lessieurs/6/Sauce/20200119
+fromage frais a la fraise/4/Produits Laitiers/20200201
+poulet haut de cuisse/3/Viande/20200202
+concentre de tomtaes/1/Sauce/20200203
+pate pizza/2/Plat Préparé/20200203
+sauce tomates cuisinee/1/Sauce/20200204
+jambon de dinde/1/Viande/20200205
+tortilla/1/Plat Préparé/20200205
+banane/6/Fruit/20200206
+creme fraiche/1/Produits Laitiers/20200206
+laitue/1/Légume/20200206
+olives/2/Fruit/20200208
+oeufs/12/Viande/20200209
+carotte/5/Légume/20200210
+elpinard/1/Légume/20200210
+poivre/3/Légume/20200210
+cerises/1/Fruit/20200211
+pomme de terre/1/Légume/20200212
+surimi/1/Poisson/20200213
+mozzarella/1/Produits Laitiers/20200214
+jus d orange/1/Fruit/20200215
+crevettes/1/Poisson/20200216
+spaghetti carbonara surgele/1/Plat Préparé/20200216
+beurre/1/Produits Laitiers/20200218
+camembert/1/Produits Laitiers/20200227
+confiture fraise/1/Plat Préparé/20200315
+fromage a tartiner/1/Produits Laitiers/20200319
+lait demi ecreme/1/Produits Laitiers/20200502
+mayonnaise/1/Sauce/20201001

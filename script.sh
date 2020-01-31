@@ -23,6 +23,8 @@ do
 done < DATA.txt
 column -t -s '/' temp.txt
 echo -e "\n"
+./alerte.sh
+echo " "
 }
 
 modif(){
@@ -51,7 +53,10 @@ echo "machin"
 }
 
 tri(){
-echo "truc"
+touch temp
+tail -n +1 DATA.txt > temp
+sort -g -k 4 -t '/' temp -o DATA.txt
+rm temp
 }
 
 ## Algorithme général ##
