@@ -22,11 +22,53 @@ read choix_modif
 }
 
 ajout(){
-echo "bidule"
+	echo "Quelle est la categorie du produit que vous voulez ajouter ?"
+	echo "1: Fruits"
+	echo "2: Légumes"
+	echo "3: Viande"
+	echo "4: Poisson"
+	echo "5: Plats préparés"
+	echo "6: Sauces"
+	echo "7: Restes"
+	read c
+	case c in 
+		'1')categorie="Fruit";;
+                '2')categorie="Légume";;
+                '3')categorie="Viande";;
+		'4')categorie="Poisson";;
+		'5')categorie="Plat Préparé";;
+		'6')categorie="Sauce";;
+		'7')categorie="Restes";;
+			echo "Saisir les infos de votre produit :"
+        		read -p "Nom" pdt
+        		read -p "Quantite" qte
+			echo "$pdt/$qte/Restes/$(date +%Y%m%d -d '+3 days'" >> DATA.txt
+                	return 0  
+		*) echo "Erreur. Veuillez taper un chiffre valable.";;
+	esac
+        echo "Saisir les infos de votre produit (Nom/Quantite/Date -AAAAMMJJ-) :"
+        read -p "Nom" pdt
+	read -p "Quantite" qte
+	read -p "Date" day
+	for i in seq 2 $(wc -l DATA.txt)
+	do  
+		if [ $pdt == $(head -n $i DATA.txt | tail -1 | cut -f 1 -d "/") ]
+        	then
+			if [ $date == $(head -n $i DATA.txt | tail -1 | cut -f 4 -d "/") ]
+			then
+				echo "$pdt/$(($qte + head -n $i DATA.txt | tail -1 ))/$categorie/$day">> DATA.txt
+				sed "/$(head -n $i DATA.txt | tail -1)/d" DATA.txt
+			fi
+		fi
+		echo "$chaine""$pdt/$qte/$categorie/$day" >> DATA.txt
+	done
 }
 
 suppression(){
-echo "machin"
+        echo "Saisir le nom du produit que vous voulez supprimer : "
+        read -r nom
+        sed -i"back" "/$nom/d" DATA.txt
+	rm -rf DATA.txt.back
 }
 
 tri(){
@@ -34,6 +76,7 @@ echo "truc"
 }
 
 ## Algorithme général ##
+clear
 sortie_boucle1=0
 while [ $sortie_boucle1 -eq 0 ]
 do
