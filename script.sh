@@ -8,8 +8,20 @@ read choix_affichage
 
 afficher(){
 clear
+echo "" > temp.txt
 tri
-column -t 4 -s '/' DATA.txt
+while read line
+do
+	if [ "$line" != "Nom/Quantité/Catégorie/Date de péremption" ]
+	then
+		date_dep=`echo $line | cut -f 4 -d '/'`
+		date_arr=`compteur $date_dep`
+		echo "$line" | sed "s#[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]#$date_arr#g" >> temp.txt
+	else 
+		echo "$line" >> temp.txt
+	fi
+done < DATA.txt
+column -t -s '/' temp.txt
 echo -e "\n"
 }
 
@@ -19,6 +31,15 @@ echo "1: Ajouter un produit"
 echo "2: Suppression"
 echo "3: Revenir au menu"
 read choix_modif
+}
+
+compteur(){
+## argument 1 : date de péremption
+date_jour=`date +%Y%m%d`
+date_1=`date -d $1 +%s`
+date_2=`date -d $date_jour +%s`
+compt=`echo "( $date_1 - $date_2) / (24*3600)" | bc`
+echo "J-$compt"
 }
 
 ajout(){

@@ -1,0 +1,5 @@
+
+Nom/Quantité/Catégorie/Date de péremption
+Jambon/5/Viande/J-0
+Yaourt nature/12/Produit laitier/J-16
+Beurre/1/Autre/J-230
