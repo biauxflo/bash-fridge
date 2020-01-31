@@ -56,8 +56,8 @@ compteur(){
 rouge='\e[0;31m'
 neutre='\e[0;m'
 date_jour=`date +%Y%m%d`
-date_1=`date -d $1 "+%s"`
-date_2=`date -d $date_jour "+%s"`
+date_1=`date -d $1 +%s 2>/dev/null` 
+date_2=`date -d $date_jour +%s 2>/dev/null`
 compt=`echo "( $date_1 - $date_2) / (24*3600)" | bc`
 if [ $compt -gt 0 ]
 then
