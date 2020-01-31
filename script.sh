@@ -1,3 +1,4 @@
+set -x
 affichage(){
 echo "Que voulez vous faire ?"
 echo "1: Modifier le contenu du frigo"
@@ -29,45 +30,49 @@ ajout(){
 	echo "4: Poisson"
 	echo "5: Plats préparés"
 	echo "6: Sauces"
-	echo "7: Restes"
+	echo "7: Produits Laitiers"
+	echo "8: Restes"
 	read c
-	case c in 
+	case $c in 
 		'1')categorie="Fruit";;
                 '2')categorie="Légume";;
                 '3')categorie="Viande";;
 		'4')categorie="Poisson";;
 		'5')categorie="Plat Préparé";;
 		'6')categorie="Sauce";;
-		'7')
+		'7')categorie="Produits Laitiers";;
+		'8')
 			categorie="Restes"
 			echo "Saisir les infos de votre produit :"
         		read -p "Nom" pdt
         		read -p "Quantite" qte
-			echo "$pdt/$qte/Restes/$(date +%Y%m%d -d '+3 days'" >> DATA.txt
+			echo "$pdt/$qte/Restes/$(date +%Y%m%d -d '+3 days')" >> DATA.txt
                 	return 0;;
-		*) echo "Erreur. Veuillez taper un chiffre valable.";;
+		*) echo "Erreur. Veuillez taper un chiffre valable."
+			return 1;;
 	esac
         echo "Saisir les infos de votre produit (Nom/Quantite/Date -AAAAMMJJ-) :"
-        read -p "Nom" pdt
-	read -p "Quantite" qte
-	read -p "Date" day
+        read -p "Nom " pdt
+	read -p "Quantite " qte
+	read -p "Date " day
 	if [ $day -eq $(date +%Y%m%d) ] || [ $day -lt $(date +%Y%m%d) ]
 	then
-		echo "Attention votre produit est à consommer rapidement (date recommandée de consommation passée)"
+		echo -e "\e[Attention votre produit est à consommer rapidement (date recommandée de consommation passée)"
 	fi
-	for i in seq 2 $(wc -l DATA.txt)
+	for i in $(seq 2 $(wc -l DATA.txt | cut -f 1 -d" "))
 	do
-		if [ $pdt == $(head -n $i DATA.txt | tail -1 | cut -f 1 -d "/") ]
+		if [[ "$pdt" = "$(head -n $i DATA.txt | tail -1 | cut -f 1 -d '/')" ]] && [[ "$categorie" = "$(head -n $i DATA.txt | tail -1 | cut -f 3 -d '/')" ]]
         	then
-			if [ $date == $(head -n $i DATA.txt | tail -1 | cut -f 4 -d "/") ]
+			if [[ "$day" = "$(head -n $i DATA.txt | tail -1 | cut -f 4 -d '/')" ]]
 			then
-				echo "$pdt/$(($qte + head -n $i DATA.txt | tail -1 ))/$categorie/$day">> DATA.txt
-				sed "/$(head -n $i DATA.txt | tail -1)/d" DATA.txt
+				echo "$pdt/$(($qte + $(head -n $i DATA.txt | tail -1| cut -f 2 -d '/')))/$categorie/$day">> DATA.txt
+				sed -i"back" "`echo $i`d" DATA.txt
+				rm DATA.txtback
 				return 0
 			fi
 		fi
 	done
-	echo"$pdt/$qte/$categorie/$day" >> DATA.txt;
+	echo "$pdt/$qte/$categorie/$day" >> DATA.txt;
 }
 
 suppression(){

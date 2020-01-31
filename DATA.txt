@@ -2,3 +2,5 @@ Nom/Quantité/Catégorie/Date de péremption
 Jambon/5/Viande/20200131
 Yaourt nature/12/Produit laitier/20200216
 Beurre/1/Autre/20200918
+Lasagnes/2/Restes/20200203
+Banane/6/Fruit/20200320
