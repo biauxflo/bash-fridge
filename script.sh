@@ -168,6 +168,7 @@ chercher_recette() {
         t5=`cat t4.txt`
         URL=$(echo $lien$t5)
         firefox $URL&
+        rm t.txt t1.txt t2.txt t3.txt t4.txt
 }
 
 tri(){
