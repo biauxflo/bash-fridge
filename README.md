@@ -15,3 +15,5 @@ Si vous ajoutez un produit ayant les mêmes noms, catégories et date de péremp
 - Afficher le contenu : Vous voyez ici le contenu exhaustif de votre frigo, classé par date de péremption (la plus courte est en haut). Si un produit est périmé, sa date de péremption 
 est remplacé par un message de prévention, et un message supplémentaire s'affiche en bas de la liste.
 - Chercher une recette : Vous pouvez ici chercher automatiquement une recette avec les ingrédients à utiliser le plus rapidement, sur le site Cuisine-libre.
+
+Le fichier DATA.txt comporte déjà des données de base pour permettre au programme de fonctionner, executer le script reset.sh pour remettre à zero les données
