@@ -25,6 +25,7 @@ dateproduit=`head -n $c DATA.txt | tail -1 | cut -f 4 -d '/'`
 
 afficher(){
 clear
+touch temp.txt
 echo "" > temp.txt
 tri
 while read line
@@ -42,6 +43,7 @@ column -t -s '/' temp.txt
 echo -e "\n"
 alerte
 echo " "
+rm temp.txt
 }
 
 modif(){
@@ -159,6 +161,7 @@ suppression(){
 }
 
 chercher_recette() {
+        touch t.txt t1.txt t2.txt t3.txt t4.txt
         tail -n +2 DATA.txt > t.txt
         head -n3 t.txt > t1.txt
         cut -d/ -f1 t1.txt > t2.txt
