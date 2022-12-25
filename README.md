@@ -19,7 +19,7 @@ est remplacé par un message de prévention, et un message supplémentaire s'aff
 Le fichier DATA.txt comporte déjà des données de base pour permettre au programme de fonctionner, executer le script reset.sh pour remettre à zero les données
 
 ## Pourquoi ?
-Projet réalisé pendant l'activté d'intersemestre (Picasoft Init)[https://librecours.net/parcours/picasoft/api-casoft-init/].
+Projet réalisé pendant l'activté d'intersemestre [Picasoft Init](https://librecours.net/parcours/picasoft/api-casoft-init/).
 
 ## Avec qui ?
 Le projet a été réalisé en groupe de 4.
