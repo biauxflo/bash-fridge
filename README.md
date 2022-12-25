@@ -1,11 +1,11 @@
-README : Inventaire d'un frigo
+# Fridgy
 
-Vous aussi vous en avez marre d'oublier votre bouffe dans un coin du frigo et de la retrouver périmée ?
+Vous aussi vous en avez marre d'oublier votre nourriture dans un coin du frigo et de la retrouver périmée ?
 Alors adoptez "Fridgy" !
 Simple d'utilisation grâce à son interface moderne, il sera votre meilleur compagnon dans la cuisine !
 Il peut effectivement vous prevenir quand un produit est périmé, et vous indique le nombre de jours avant péremption !
 
-Comment l'utiliser ?
+## Comment l'utiliser ?
 Executer le fichier "script.sh" et appréciez nos nombreuses fonctionnalités
 
 - Modifier le contenu : Vous pouvez ajouter ou supprimer des produits dans votre frigo.
@@ -17,3 +17,15 @@ est remplacé par un message de prévention, et un message supplémentaire s'aff
 - Chercher une recette : Vous pouvez ici chercher automatiquement une recette avec les ingrédients à utiliser le plus rapidement, sur le site Cuisine-libre.
 
 Le fichier DATA.txt comporte déjà des données de base pour permettre au programme de fonctionner, executer le script reset.sh pour remettre à zero les données
+
+## Pourquoi ?
+Projet réalisé pendant l'activté d'intersemestre Picasoft Init.
+
+## Avec qui ?
+Le projet a été réalisé en groupe de 4.
+
+Je remercie Yoann AYOUB, Mohammed Amine SAIDI et Paul DAVIET pour ce projet.
+
+## Mots-clés
+
+* Bash
